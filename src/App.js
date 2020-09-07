@@ -10,7 +10,7 @@ import Navbar from "./Components//navbar.component"
 function App() {
   return (
     <Router>
-      <Navbar/>
+      <Navbar logedIn="false"/>
 
       <Route path="/" exact component={Login} />
       <Route path="/signup" component={Signup} />

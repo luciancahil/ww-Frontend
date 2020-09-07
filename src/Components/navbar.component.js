@@ -1,9 +1,24 @@
 import React from 'react';
 
 class Navbar extends React.Component {
-  render() {
-    return <h2>Navbar</h2>;
-  }
+
+    constructor(props){
+        super();
+        //console.log(props);
+        console.log(props.logedIn)
+    }
+
+    render() {
+
+        return (
+            <div className="topnav">
+                <a className="active">Home</a>
+                <a className="#news">Signup</a>
+                <a className="#contact">Information</a>
+                <a className="#about">Signout</a>
+            </div>
+        )
+    }
 }
 
 
