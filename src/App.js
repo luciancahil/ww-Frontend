@@ -5,11 +5,12 @@ import Login from "./Components/login.component"
 import Signup from "./Components/signup.component"
 import UserInfo from "./Components/userinfo.component"
 import Info from "./Components/info.component"
+import Navbar from "./Components//navbar.component"
 
 function App() {
   return (
     <Router>
-      <h1>Navbar</h1>
+      <Navbar/>
 
       <Route path="/" exact component={Login} />
       <Route path="/signup" component={Signup} />
