@@ -1,10 +1,10 @@
 import React from 'react';
 
-class Bar extends React.Component {
+class Bars extends React.Component {
   render() {
     return (
         <div id = "bars">
-            <div id = "bar">
+            <div class = "bar">
                 <span>
                     <h2>Date</h2>
                 </span>
@@ -27,10 +27,33 @@ class Bar extends React.Component {
                     <h2>7-Day Change</h2>
                 </span>
             </div>
+            <div class = "bar">
+                <span>
+                    <input type = "date"></input>
+                </span>
+                <span>
+                    <input type = "number"></input>
+                </span>
+                <span>
+                    <input type = "number"></input>
+                </span>
+                <span>
+                    <input type = "number"></input>
+                </span>
+                <span>
+                    <h2>N/A</h2>
+                </span>
+                <span>
+                    <h2>N/A</h2>
+                </span>
+                <span>
+                    <h2><button>Submit</button></h2>
+                </span>
+            </div>
         </div>
     )
   }
 }
 
 
-export default Bar;
+export default Bars;
