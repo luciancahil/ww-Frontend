@@ -42,7 +42,7 @@ class Bars extends React.Component {
 
     onSubmit(e){
         const fetchURL = "https://weight.wwtbe.nl/addEntry?username=" + sessionStorage.getItem(this.state.randomSession + "username") 
-        + "&entrydate=" + this.state.date + "&height=" + this.state.height + "&abdomen=" + this.state.abs + "&neck=" + this.state.neck
+        + "&entrydate='" + this.state.date + "'&height=" + this.state.height + "&abdomen=" + this.state.abs + "&neck=" + this.state.neck
 
         fetch(fetchURL).then(response => console.log(response)).catch(err => console.log(err))
     }
