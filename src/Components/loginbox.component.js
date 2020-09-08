@@ -1,8 +1,8 @@
 import React from 'react';
-//tortilla
-class Login extends React.Component {
+import LoginError from './loginerror.component'
 
 
+class LoginBox extends React.Component {
     constructor(props){
         super(props);
 
@@ -39,9 +39,9 @@ class Login extends React.Component {
 
         fetch(fetchURL)
         .then((response) => response.text())
-            .then((text) => {
-            console.log(text)
-});
+        .then((text) => {
+        console.log(text)
+        });
     }
 
     render() {
@@ -54,6 +54,7 @@ class Login extends React.Component {
                         <div id = "LoginForms">
                             <plaintext>username:</plaintext><input type = "text" onChange = {this.onChangeUsername}></input><br></br>
                             <plaintext>Password:</plaintext><input type = "text" onChange = {this.onChangePassword}></input><br></br>
+                            <LoginError/>
                         </div>
 
                         <div className = "LoginButtonOuter">
@@ -74,4 +75,4 @@ class Login extends React.Component {
 }
 
 
-export default Login;
+export default LoginBox;
