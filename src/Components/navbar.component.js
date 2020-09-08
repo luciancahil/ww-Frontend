@@ -2,13 +2,13 @@ import React from 'react';
 import NavLink from './navlink.component'
 
 class Navbar extends React.Component {
-    rightTitle = "";
-    rightLink = "";
-
-
     constructor(props){
         super();
 
+        this.state = {
+            rightTitle : "Log In",
+            rightLink : "#/login"
+        }
         //checks if a user is logged in
         if(props.username != "nothing"){  //right button shold be a logged out button
             this.rightTitle = "Log Out"
@@ -19,13 +19,29 @@ class Navbar extends React.Component {
         }
     }
 
-    render() {
+    componentDidUpdate(){
+        if(this.props.username != "nothing"){  //right button shold be a logged out button
+            if(this.state.rightTitle != "Log Out")
+                this.setState({
+                    rightTitle : "Log Out",
+                    rightLink : "#/signOut"
+                })
+        }else{                      //right button should be a login button
+            if(this.state.rightTitle != "Log In")
+                this.setState({
+                    rightTitle : "Log In",
+                    rightLink : "#/login"
+                })
+        }
+    }
 
+    render() {
+        console.log(this.state.rightLink)
         return (
             <nav className = "topnav">
                 <NavLink link = "#/" title = "Home"/>
                 <NavLink link = "#/info" title = "Info"/>
-                <NavLink classes = "right" link = {this.rightLink} title = {this.rightTitle}/>
+                <NavLink classes = "right" link = {this.state.rightLink} title = {this.state.rightTitle}/>
             </nav>
         )
     }
@@ -33,14 +49,3 @@ class Navbar extends React.Component {
 
 
 export default Navbar;
-
-/*
-
-<div className="topnav">
-                <a className="active">Home</a>
-                <a className="#news">Signup</a>
-                <a className="#contact">Information</a>
-                <a className="#about">Signout</a>
-            </div>
-
-            */

@@ -9,7 +9,6 @@ class Login extends React.Component {
   }
 
   render() {
-    console.log(this.props.username);
 
     if(this.props.username != "nothing"){
       return (<h1>You are already loged in.</h1>)

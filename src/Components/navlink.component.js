@@ -16,7 +16,7 @@ class Info extends React.Component {
 
     render() {
         return (
-            <a href = {this.link} className={this.navClass} >{this.title}</a>
+            <a href = {this.props.link} className={this.navClass} >{this.props.title}</a>
         );
     }
 }

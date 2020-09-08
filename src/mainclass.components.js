@@ -6,6 +6,7 @@ import Signup from "./Components/signup.component"
 import UserInfo from "./Components/userinfo.component"
 import Info from "./Components/info.component"
 import Navbar from "./Components//navbar.component"
+import HomePage from "./Components/homepage.component"
 
 class MainClass extends React.Component{
     constructor(props){
@@ -31,7 +32,7 @@ class MainClass extends React.Component{
             
             <Route path="/" exact render={(props) => <Login {...props} username = {this.state.username} chageUser = {this.changeUser}/>} />
             <Route path="/login" render={(props) => <Login {...props} username = {this.state.username} chageUser = {this.changeUser}/>} />
-            <Route path="/home" render={(props) => <Login {...props} username = {this.state.username} chageUser = {this.changeUser}/>} />
+            <Route path="/home" render={(props) => <HomePage {...props} username = {this.state.username} chageUser = {this.changeUser}/>} />
             <Route path="/signup" component={Signup} />
             <Route path="/users" component={UserInfo} />
             <Route path="/info" component={Info} />
