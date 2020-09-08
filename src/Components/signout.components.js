@@ -3,14 +3,11 @@ import React from 'react';
 class SignOut extends React.Component {
 
     componentDidMount(){
-        this.props.changeUser('nothing')
-        sessionStorage.clear();
-        window.history.pushState('page2', 'Title', '/home');
+        this.props.clearSession();
     }
 
     render() {
-        console.log("HI")
-        return null;
+        return <h2>You are now loged out</h2>;
     }
 }
 
