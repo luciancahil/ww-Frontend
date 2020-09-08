@@ -46,10 +46,12 @@ class LoginBox extends React.Component {
                     login_status: text
                 })
                 if(this.state.login_status == "Granted"){
-                    console.log("Logged in");
                     this.props.chageUser(userN);
                     window.history.pushState('page2', 'Title', '/home');
-                    
+                    sessionStorage.setItem(this.props.randomSession + "username", userN);
+                    sessionStorage.setItem(this.props.randomSession + "password", passW);
+
+                    console.log(sessionStorage.getItem(this.props.randomSession + "username"))
                 }
             })
     }

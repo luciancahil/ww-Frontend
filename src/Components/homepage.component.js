@@ -6,7 +6,7 @@ class HomePage extends React.Component {
       if(this.props.username != "nothing"){
         return <h2>Hello {this.props.username}</h2>
       }else{
-        return <LoginBox chageUser = {this.props.chageUser}/>
+        return <LoginBox chageUser = {this.props.chageUser} randomSession = {this.prop.randomSession}/>
       }
   }
 }

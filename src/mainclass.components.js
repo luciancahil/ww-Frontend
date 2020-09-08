@@ -12,7 +12,8 @@ class MainClass extends React.Component{
     constructor(props){
         super();
         this.state = {
-            username : 'nothing'
+            username : 'nothing',
+            radomSession: "es7S9"
         }
 
         this.changeUser = this.changeUser.bind(this);
@@ -31,8 +32,8 @@ class MainClass extends React.Component{
 
             
             <Route path="/" exact render={(props) => <Login {...props} username = {this.state.username} chageUser = {this.changeUser}/>} />
-            <Route path="/login" render={(props) => <Login {...props} username = {this.state.username} chageUser = {this.changeUser}/>} />
-            <Route path="/home" render={(props) => <HomePage {...props} username = {this.state.username} chageUser = {this.changeUser}/>} />
+            <Route path="/login" render={(props) => <Login {...props} username = {this.state.username} chageUser = {this.changeUser} randomSession = {this.state.randomSession} />} />
+            <Route path="/home" render={(props) => <HomePage {...props} username = {this.state.username} chageUser = {this.changeUser} randomSession = {this.state.randomSession}/>} />
             <Route path="/signup" component={Signup} />
             <Route path="/users" component={UserInfo} />
             <Route path="/info" component={Info} />
