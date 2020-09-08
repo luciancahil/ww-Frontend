@@ -135,6 +135,40 @@ html{
   margin:auto;
 }
 
+#bars{
+  margin-top: 20px;
+}
+
+
+.bar{
+  background-color: #d4cab8;
+  width:80%;
+  margin:auto;
+  border:solid;
+  border-width: 2px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.bar span{
+  display:inline-block;
+  width: 14.285%;
+  border:solid;
+  box-sizing: border-box;
+  height:100%;
+  vertical-align: middle;
+}
+
+.bar h2{
+  text-align: center;
+}
+
+.bar input{
+  width: 98%;
+  height:67px;
+  font-size: 150%;
+}
+
 .App-link {
   color: #61dafb;
 }
