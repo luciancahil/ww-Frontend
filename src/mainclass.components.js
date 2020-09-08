@@ -18,8 +18,9 @@ class MainClass extends React.Component{
     }
 
     changeUser(newUser){
-        
-        this.state.username = newUser;
+        this.setState({
+            username : newUser
+        })
     }
 
     render(){
@@ -29,7 +30,8 @@ class MainClass extends React.Component{
 
             
             <Route path="/" exact render={(props) => <Login {...props} username = {this.state.username} chageUser = {this.changeUser}/>} />
-            <Route path="/login" exact component={Login} />
+            <Route path="/login" render={(props) => <Login {...props} username = {this.state.username} chageUser = {this.changeUser}/>} />
+            <Route path="/home" render={(props) => <Login {...props} username = {this.state.username} chageUser = {this.changeUser}/>} />
             <Route path="/signup" component={Signup} />
             <Route path="/users" component={UserInfo} />
             <Route path="/info" component={Info} />

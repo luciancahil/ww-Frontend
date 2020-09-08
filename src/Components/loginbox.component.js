@@ -48,7 +48,7 @@ class LoginBox extends React.Component {
                 if(this.state.login_status == "Granted"){
                     console.log("Logged in");
                     this.props.chageUser(userN);
-                    window.history.pushState('page2', 'Title', '/');
+                    window.history.pushState('page2', 'Title', '/home');
                     
                 }
             })
@@ -56,7 +56,6 @@ class LoginBox extends React.Component {
 
 
     render() {
-
         return(
             <div id = "LoginBoxOuter">
                 <div id = "Loginbox">
