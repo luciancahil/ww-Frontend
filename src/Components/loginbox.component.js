@@ -39,7 +39,7 @@ class LoginBox extends React.Component {
         e.preventDefault();
         let userN = this.state.login_username;
         let passW = this.state.login_password;
-        let fetchURL = "http://weightwatchbackend-env.eba-jkqtmzzk.us-east-2.elasticbeanstalk.com/login?username=" + userN + "&password=" + passW;
+        let fetchURL = "http://weight.wwtbe.nl/login?username=" + userN + "&password=" + passW;
 
 
         fetch(fetchURL)
