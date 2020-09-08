@@ -1,5 +1,5 @@
 import React from 'react';
-import Bars from './bar.component'
+import Bars from './bars.component'
 
 class User extends React.Component {
   render() {
