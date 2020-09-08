@@ -135,12 +135,29 @@ html{
   margin:auto;
 }
 
-#barOuter{
-  background-color: pink;
+#bars{
+  margin-top: 20px;
 }
 
-#barOuter span{
+
+#bar{
+  background-color: #d4cab8;
+  width:80%;
+  margin:auto;
+  border:solid;
+  border-width: 2px;
+  box-sizing: border-box;
+}
+
+#bar span{
   display:inline-block;
+  width: 14.285%;
+  border:solid;
+  box-sizing: border-box;
+}
+
+#bar h2{
+  text-align: center;
 }
 
 .App-link {
