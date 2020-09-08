@@ -67,7 +67,7 @@ class LoginBox extends React.Component {
 
                     <div id = "LoginBottom">
                         <div id = "LoginForms">
-                            <plaintext>username:</plaintext><input type = "text" value = {this.state.login_username} onChange = {this.onChangeUsername}></input><br></br>
+                            <plaintext>Username:</plaintext><input type = "text" value = {this.state.login_username} onChange = {this.onChangeUsername}></input><br></br>
                             <plaintext>Password:</plaintext><input type = "password" value = {this.state.login_password} onChange = {this.onChangePassword}></input><br></br>
                             <LoginError type = {this.state.login_status}/>
                         </div>
