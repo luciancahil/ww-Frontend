@@ -4,6 +4,8 @@ class Bars extends React.Component {
     constructor(props){
         super()
 
+        
+
         this.state = {
             date : "",
             height : 0,
@@ -11,11 +13,22 @@ class Bars extends React.Component {
             neck : 0
         }
 
+        this.getEntries = this.getEntries.bind(this);
+        this.getEntries();
+
         this.onChangeDate = this.onChangeDate.bind(this);
         this.onChangeHeight = this.onChangeHeight.bind(this);
         this.onChangeAbs = this.onChangeAbs.bind(this);
         this.onChangeNeck = this.onChangeNeck.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+    }
+
+    getEntries(){
+        var getURL = "https://weight.wwtbe.nl/retrieve?username=" + sessionStorage.getItem(this.state.randomSession + "username")
+        
+        fetch(getURL).then(response => response.text())
+        .then((data) => console.log(data))
+        .catch(err => console.log(err));
     }
 
 

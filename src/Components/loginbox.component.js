@@ -52,8 +52,6 @@ class LoginBox extends React.Component {
                     this.props.chageUser(userN, passW);
                     window.history.pushState('page2', 'Title', '/home');
                     
-
-                    console.log(sessionStorage.getItem(this.props.randomSession + "username"))
                 }
             })
     }
