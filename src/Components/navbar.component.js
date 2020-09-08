@@ -2,17 +2,31 @@ import React from 'react';
 import NavLink from './navlink.component'
 
 class Navbar extends React.Component {
+    rightTitle = "";
+    rightLink = "";
+
 
     constructor(props){
         super();
         //console.log(props);
-        console.log(props.logedIn)
+        console.log(props.logedIn);
+        if(props.logedIn){  //right button shold be a logged out button
+            this.rightTitle = "Log Out"
+            this.rightLink = "/signOut"
+        }else{
+            this.rightTitle = "Log In";
+            this.rightLink = "/login"
+        }
     }
 
     render() {
 
         return (
-            <NavLink link = "youtube.com" title = "YouTube"/>
+            <nav className = "topnav">
+                <NavLink link = "/" title = "Home"/>
+                <NavLink link = "/info" title = "info"/>
+                <NavLink classes = "right" link = {this.rightLink} title = {this.rightTitle}/>
+            </nav>
         )
     }
 }
