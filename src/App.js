@@ -8,11 +8,14 @@ import Info from "./Components/info.component"
 import Navbar from "./Components//navbar.component"
 
 function App() {
+  let homecomponent = Login
+
   return (
     <Router>
-      <Navbar/>
+      <Navbar logedIn={false}/>
 
-      <Route path="/" exact component={Login} />
+      <Route path="/" exact component= {homecomponent} />
+      <Route path="/login" exact component={Login} />
       <Route path="/signup" component={Signup} />
       <Route path="/users" component={UserInfo} />
       <Route path="/info" component={Info} />
