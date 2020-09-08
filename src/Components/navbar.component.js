@@ -8,7 +8,6 @@ class Navbar extends React.Component {
 
     constructor(props){
         super();
-        console.log(props.username)
 
         //checks if a user is logged in
         if(props.username != "nothing"){  //right button shold be a logged out button

@@ -47,6 +47,7 @@ class LoginBox extends React.Component {
                 })
                 if(this.state.login_status == "Granted"){
                     console.log("Logged in");
+                    this.props.chageUser(userN);
                     window.history.pushState('page2', 'Title', '/');
                     
                 }
@@ -63,8 +64,8 @@ class LoginBox extends React.Component {
 
                     <div id = "LoginBottom">
                         <div id = "LoginForms">
-                            <plaintext>username:</plaintext><input type = "text" onChange = {this.onChangeUsername}></input><br></br>
-                            <plaintext>Password:</plaintext><input type = "text" onChange = {this.onChangePassword}></input><br></br>
+                            <plaintext>username:</plaintext><input type = "text" value = {this.state.login_username} onChange = {this.onChangeUsername}></input><br></br>
+                            <plaintext>Password:</plaintext><input type = "text" value = {this.state.login_password} onChange = {this.onChangePassword}></input><br></br>
                             <LoginError type = {this.state.login_status}/>
                         </div>
 

@@ -13,24 +13,22 @@ class MainClass extends React.Component{
         this.state = {
             username : 'nothing'
         }
+
+        this.changeUser = this.changeUser.bind(this);
     }
 
     changeUser(newUser){
-        this.setState({
-            username : newUser
-        })
+        
+        this.state.username = newUser;
     }
-//            <Route exact path="/props-through-render" render={(props) => <PropsPage {...props} title={`Props through render`} />} />
 
     render(){
-        console.log(this.state.username)
-
         return (
             <Router>
             <Navbar username = {this.state.username}/>
 
             
-            <Route path="/" exact render={(props) => <Login {...props} username = {this.state.username}/>} />
+            <Route path="/" exact render={(props) => <Login {...props} username = {this.state.username} chageUser = {this.changeUser}/>} />
             <Route path="/login" exact component={Login} />
             <Route path="/signup" component={Signup} />
             <Route path="/users" component={UserInfo} />
