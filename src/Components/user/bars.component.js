@@ -15,6 +15,7 @@ class Bars extends React.Component {
         this.onChangeHeight = this.onChangeHeight.bind(this);
         this.onChangeAbs = this.onChangeAbs.bind(this);
         this.onChangeNeck = this.onChangeNeck.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
 
@@ -22,25 +23,28 @@ class Bars extends React.Component {
         e.preventDefault();
 
         this.state.date = e.target.value
-        console.log(this.state.date)
     }
     onChangeHeight(e){
         e.preventDefault();
 
         this.state.height = e.target.value
-        console.log(this.state.height)
     }
     onChangeAbs(e){
         e.preventDefault();
 
         this.state.abs = e.target.value
-        console.log(this.state.abs)
     }
     onChangeNeck(e){
         e.preventDefault();
 
         this.state.neck = e.target.value
-        console.log(this.state.neck)
+    }
+
+    onSubmit(e){
+        const fetchURL = "https://weight.wwtbe.nl/addEntry?username=" + sessionStorage.getItem(this.state.randomSession + "username") 
+        + "&entrydate=" + this.state.date + "&height=" + this.state.height + "&abdomen=" + this.state.abs + "&neck=" + this.state.neck
+
+        fetch(fetchURL).then(response => console.log(response)).catch(err => console.log(err))
     }
 
   render() {
@@ -89,7 +93,7 @@ class Bars extends React.Component {
                     <h2>N/A</h2>
                 </span>
                 <span>
-                    <h2><button>Submit</button></h2>
+                    <h2><button onClick = {this.onSubmit}>Submit</button></h2>
                 </span>
             </div>
         </div>
