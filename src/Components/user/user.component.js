@@ -1,8 +1,9 @@
 import React from 'react';
+import Bar from './bar.component'
 
 class User extends React.Component {
   render() {
-    return <h2>User Page</h2>;
+    return <Bar/>;
   }
 }
 

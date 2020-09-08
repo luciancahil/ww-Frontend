@@ -135,6 +135,14 @@ html{
   margin:auto;
 }
 
+#barOuter{
+  background-color: pink;
+}
+
+#barOuter span{
+  display:inline-block;
+}
+
 .App-link {
   color: #61dafb;
 }
