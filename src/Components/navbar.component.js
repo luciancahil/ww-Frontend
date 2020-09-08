@@ -36,7 +36,6 @@ class Navbar extends React.Component {
     }
 
     render() {
-        console.log(this.state.rightLink)
         return (
             <nav className = "topnav">
                 <NavLink link = "/" title = "Home"/>

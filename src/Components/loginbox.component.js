@@ -14,6 +14,9 @@ class LoginBox extends React.Component {
             login_password: "",
             login_status: "Hello"
         };
+        if(sessionStorage.getItem(this.props.randomSession + "username") !== null){
+            props.quickStart(sessionStorage.getItem(this.props.randomSession + "username"))
+        }
     }
 
     onChangeUsername(e){
@@ -46,10 +49,9 @@ class LoginBox extends React.Component {
                     login_status: text
                 })
                 if(this.state.login_status == "Granted"){
-                    this.props.chageUser(userN);
+                    this.props.chageUser(userN, passW);
                     window.history.pushState('page2', 'Title', '/home');
-                    sessionStorage.setItem(this.props.randomSession + "username", userN);
-                    sessionStorage.setItem(this.props.randomSession + "password", passW);
+                    
 
                     console.log(sessionStorage.getItem(this.props.randomSession + "username"))
                 }
