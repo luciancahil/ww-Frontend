@@ -45,7 +45,11 @@ class LoginBox extends React.Component {
                 this.setState({
                     login_status: text
                 })
-                this.forceUpdate();
+                if(this.state.login_status == "Granted"){
+                    console.log("Logged in");
+                    window.history.pushState('page2', 'Title', '/');
+                    
+                }
             })
     }
 
