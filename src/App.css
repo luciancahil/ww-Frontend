@@ -88,6 +88,7 @@ html{
 
 #Loginbox plaintext{
   display: inline-block;
+  margin: 10px;
 }
 
 #Loginbox input{
@@ -99,6 +100,12 @@ html{
   background-color: white;
   border-radius: 10px;
   
+}
+
+#Loginbox #LoginError{
+  font-size: 100%;
+  color:red;
+  margin: 0;
 }
 
 #Loginbox button:focus{

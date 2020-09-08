@@ -5,13 +5,14 @@ import LoginError from './loginerror.component'
 class LoginBox extends React.Component {
     constructor(props){
         super(props);
-
+        
         this.onSubmit = this.onSubmit.bind(this);
         this.onChangeUsername = this.onChangeUsername.bind(this);
         this.onChangePassword = this.onChangePassword.bind(this);
         this.state = {
             login_username: "" ,
-            login_password: ""
+            login_password: "",
+            login_status: "Hello"
         };
     }
 
@@ -37,14 +38,20 @@ class LoginBox extends React.Component {
         let passW = this.state.login_password;
         let fetchURL = "http://weightwatchbackend-env.eba-jkqtmzzk.us-east-2.elasticbeanstalk.com/login?username=" + userN + "&password=" + passW;
 
+
         fetch(fetchURL)
-        .then((response) => response.text())
-        .then((text) => {
-        console.log(text)
-        });
+            .then((response) => response.text())
+            .then((text) => {
+                this.setState({
+                    login_status: text
+                })
+                this.forceUpdate();
+            })
     }
 
+
     render() {
+
         return(
             <div id = "LoginBoxOuter">
                 <div id = "Loginbox">
@@ -54,7 +61,7 @@ class LoginBox extends React.Component {
                         <div id = "LoginForms">
                             <plaintext>username:</plaintext><input type = "text" onChange = {this.onChangeUsername}></input><br></br>
                             <plaintext>Password:</plaintext><input type = "text" onChange = {this.onChangePassword}></input><br></br>
-                            <LoginError/>
+                            <LoginError type = {this.state.login_status}/>
                         </div>
 
                         <div className = "LoginButtonOuter">
