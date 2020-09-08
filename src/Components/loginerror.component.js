@@ -1,30 +1,27 @@
 import React from 'react';
-import WrongPass from './PasswordErrors/wrongpass.component'
 
 class LoginError extends React.Component {
-    monkey = {}
-
     constructor(props){
         super(props)
         this.state = {
             error_message : "none"
         }
-        console.log(props.type)
-        if(props.type == "Denied"){
-            this.setState({error_message: WrongPass});
-        }
     }
 
+    //Changes after a login attempt
     componentDidUpdate(){
+        const wrongPass = "Error! Your Password is Incorrect";
+        const notRegistered = "Error! Your Username is not registered.";
+
         if(this.props.type == "Denied"){
-            if(this.state.error_message != "Error! Your Password is Incorrect"){
-                this.setState({error_message: "Error! Your Password is Incorrect"});
+            if(this.state.error_message != wrongPass){
+                this.setState({error_message: wrongPass});
             }
         }
         
         if(this.props.type == "Unfound"){
-            if(this.state.error_message != "Error! Your Username is not registered."){
-                this.setState({error_message: "Error! Your Username is not registered."});
+            if(this.state.error_message != notRegistered){
+                this.setState({error_message: notRegistered});
             }
         }
     }
