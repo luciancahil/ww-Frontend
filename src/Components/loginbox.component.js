@@ -33,9 +33,15 @@ class Login extends React.Component {
 
     onSubmit(e){
         e.preventDefault();
+        let userN = this.state.login_username;
+        let passW = this.state.login_password;
+        let fetchURL = "http://weightwatchbackend-env.eba-jkqtmzzk.us-east-2.elasticbeanstalk.com/login?username=" + userN + "&password=" + passW;
 
-        console.log(this.state.login_username)
-        console.log(this.state.login_password)
+        fetch(fetchURL)
+        .then((response) => response.text())
+            .then((text) => {
+            console.log(text)
+});
     }
 
     render() {
