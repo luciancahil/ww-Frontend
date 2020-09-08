@@ -1,3 +1,7 @@
+html{
+  background-color: silver;
+}
+
 .App {
   text-align: center;
 }
@@ -54,6 +58,74 @@
 
 .topnav .right{
   float: right;
+}
+
+#Loginbox{
+  width: 60%;
+  margin: 0 auto;
+  margin-top:30px;
+}
+
+#Loginbox h2{
+  padding:0;
+  width: 16%;
+  color:white;
+  margin: 0 auto;
+}
+
+#Loginbox #LoginTop{
+  background-color:#282828;
+}
+
+#Loginbox #LoginBottom{
+  padding:10px;
+  background-color: #d4cab8;
+}
+
+#Loginbox #LoginForms{
+  margin-bottom: 20px;
+}
+
+#Loginbox plaintext{
+  display: inline-block;
+}
+
+#Loginbox input{
+  width:99%;
+}
+
+#Loginbox button{
+  border: solid;
+  background-color: white;
+  border-radius: 10px;
+  
+}
+
+#Loginbox button:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+#Loginbox button:active{
+  background:red;
+}
+
+#Loginbox button, #Loginbox plaintext{
+  font-size: 200%;
+}
+
+#Loginbox .inputWrapper{
+  margin: auto;
+}
+
+#Loginbox .LoginButtonOuter{
+  width:50%;
+  display:inline-block;
+}
+
+#Loginbox .LoginButtonInner{
+  width:45%;
+  margin:auto;
 }
 
 .App-link {
