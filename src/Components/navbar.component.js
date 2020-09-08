@@ -24,7 +24,7 @@ class Navbar extends React.Component {
         return (
             <nav className = "topnav">
                 <NavLink link = "/" title = "Home"/>
-                <NavLink link = "/info" title = "info"/>
+                <NavLink link = "/info" title = "Info"/>
                 <NavLink classes = "right" link = {this.rightLink} title = {this.rightTitle}/>
             </nav>
         )
