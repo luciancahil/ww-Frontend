@@ -12,10 +12,10 @@ class Navbar extends React.Component {
         //checks if a user is logged in
         if(props.username != "nothing"){  //right button shold be a logged out button
             this.rightTitle = "Log Out"
-            this.rightLink = "/signOut"
+            this.rightLink = "#/signOut"
         }else{                      //right button should be a login button
             this.rightTitle = "Log In";
-            this.rightLink = "/login"
+            this.rightLink = "#/login"
         }
     }
 
@@ -23,8 +23,8 @@ class Navbar extends React.Component {
 
         return (
             <nav className = "topnav">
-                <NavLink link = "/" title = "Home"/>
-                <NavLink link = "/info" title = "Info"/>
+                <NavLink link = "#/" title = "Home"/>
+                <NavLink link = "#/info" title = "Info"/>
                 <NavLink classes = "right" link = {this.rightLink} title = {this.rightTitle}/>
             </nav>
         )
