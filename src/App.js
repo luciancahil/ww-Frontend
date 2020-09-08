@@ -12,7 +12,7 @@ function App() {
 
   return (
     <Router>
-      <Navbar logedIn={true}/>
+      <Navbar logedIn={false}/>
 
       <Route path="/" exact component= {homecomponent} />
       <Route path="/login" exact component={Login} />
