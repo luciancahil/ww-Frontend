@@ -10,7 +10,8 @@ class Bars extends React.Component {
             date : "",
             height : 0,
             abs : 0,
-            neck : 0
+            neck : 0,
+            entries: null
         }
 
         this.getEntries = this.getEntries.bind(this);
@@ -23,12 +24,23 @@ class Bars extends React.Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
 
+    componentDidMount(){
+        this.getEntries();
+    }
+
     getEntries(){
         var getURL = "https://weight.wwtbe.nl/retrieve?username=" + sessionStorage.getItem(this.state.randomSession + "username")
+        fetch(getURL)
+            .then(response => response.json())
+            .then(({data}) => {
+                console.log(data[0])
+            })
+            .catch(err => console.log(err))
         
+        /*
         fetch(getURL).then(response => response.text())
-        .then((data) => console.log(data))
-        .catch(err => console.log(err));
+        .then((data) => JSON.parse(data))
+        .then(data => console.log(data));*/
     }
 
 
