@@ -15,7 +15,8 @@ class Bars extends React.Component {
         }
 
         this.getEntries = this.getEntries.bind(this);
-        this.getEntries();
+        this.operateData = this.operateData.bind(this);
+        this.getBodyFatPercent = this.getBodyFatPercent.bind(this);
 
         this.onChangeDate = this.onChangeDate.bind(this);
         this.onChangeHeight = this.onChangeHeight.bind(this);
@@ -33,7 +34,7 @@ class Bars extends React.Component {
         fetch(getURL)
             .then(response => response.json())
             .then(({data}) => {
-                console.log(data[0])
+                this.operateData(data)
             })
             .catch(err => console.log(err))
         
@@ -41,6 +42,29 @@ class Bars extends React.Component {
         fetch(getURL).then(response => response.text())
         .then((data) => JSON.parse(data))
         .then(data => console.log(data));*/
+    }
+
+
+    //works to calculate body fat percentage, daily change, and weekly change
+    operateData(array){
+        console.log(array);
+        for(let i = 0; i < array.length; i++){
+            this.getBodyFatPercent(array[i]);
+        }
+        console.log(array)
+    }
+
+    getBodyFatPercent(entry){
+        const abWidth = entry.abdomen;
+        const neckWidth = entry.neck;
+        const h = entry.height;
+
+        const fatPercent = 0 
+            + 86.010 * Math.log(abWidth - neckWidth)/Math.log(10)
+            - 70.041 * Math.log(h)/Math.log(10)
+            + 36.76;
+        
+        entry.fatPer = fatPercent.toFixed(1);
     }
 
 
