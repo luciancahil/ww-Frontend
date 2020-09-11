@@ -1,4 +1,5 @@
 import React from 'react';
+import Bar from './bar.component'
 
 class Bars extends React.Component {
     constructor(props){
@@ -105,7 +106,7 @@ class Bars extends React.Component {
 
         let perChange = (per1 - per0)/per0;
 
-        entry1.change = perChange*100;
+        entry1.change = (perChange*100).toFixed(2);
     }
 
     //calculates the differnce between today and yesterday's running average
@@ -152,63 +153,64 @@ class Bars extends React.Component {
     }
 
 
-renderEntries = ({entrydate, fatPer}) =>    <div key = {entrydate}>{fatPer}</div>
-  render() {
+    renderEntries = ({entrydate, height, abdomen, neck, fatPer, change, weeklyChange}) =>  <Bar thisDate = {entrydate} thisHeight = {height} thisAb = {abdomen} thisNeck = {neck} thisPer = {fatPer} thisChange = {change} thisWeek = {weeklyChange}/>
+  
+    render() {
 
-    return (
-        <div id = "bars">
-            <div class = "bar">
-                <span>
-                    <h2>Date</h2>
-                </span>
-                <span>
-                    <h2>Height</h2>
-                </span>
-                <span>
-                    <h2>Abdomen</h2>
-                </span>
-                <span>
-                    <h2>Neck</h2>
-                </span>
-                <span>
-                    <h2>Body Fat %</h2>
-                </span>
-                <span>
-                    <h2>Daily Change</h2>
-                </span>
-                <span>
-                    <h2>7-Day Change</h2>
-                </span>
+        return (
+            <div id = "bars">
+                <div className = "bar">
+                    <span>
+                        <h2>Date</h2>
+                    </span>
+                    <span>
+                        <h2>Height</h2>
+                    </span>
+                    <span>
+                        <h2>Abdomen</h2>
+                    </span>
+                    <span>
+                        <h2>Neck</h2>
+                    </span>
+                    <span>
+                        <h2>Body Fat %</h2>
+                    </span>
+                    <span>
+                        <h2>Daily Change</h2>
+                    </span>
+                    <span>
+                        <h2>7-Day Change</h2>
+                    </span>
+                </div>
+                <div className = "bar">
+                    <span>
+                        <input id = "inputDate" type = "date" onChange = {this.onChangeDate}></input>
+                    </span>
+                    <span>
+                        <input id = "inputHeight" type = "number" onChange = {this.onChangeHeight}></input>
+                    </span>
+                    <span>
+                        <input id = "inputAbs" type = "number" onChange = {this.onChangeAbs}></input>
+                    </span>
+                    <span>
+                        <input id = "inputNeck" type = "number" onChange = {this.onChangeNeck}></input>
+                    </span>
+                    <span>
+                        <h2>N/A</h2>
+                    </span>
+                    <span>
+                        <h2>N/A</h2>
+                    </span>
+                    <span>
+                        <h2><button onClick = {this.onSubmit}>Submit</button></h2>
+                    </span>
+                </div>
+                <div className = "TestingEntries">
+                    {this.state.entries.map(this.renderEntries)}
+                </div>
             </div>
-            <div class = "bar">
-                <span>
-                    <input id = "inputDate" type = "date" onChange = {this.onChangeDate}></input>
-                </span>
-                <span>
-                    <input id = "inputHeight" type = "number" onChange = {this.onChangeHeight}></input>
-                </span>
-                <span>
-                    <input id = "inputAbs" type = "number" onChange = {this.onChangeAbs}></input>
-                </span>
-                <span>
-                    <input id = "inputNeck" type = "number" onChange = {this.onChangeNeck}></input>
-                </span>
-                <span>
-                    <h2>N/A</h2>
-                </span>
-                <span>
-                    <h2>N/A</h2>
-                </span>
-                <span>
-                    <h2><button onClick = {this.onSubmit}>Submit</button></h2>
-                </span>
-            </div>
-            <div className = "TestingEntries">
-                {this.state.entries.map(this.renderEntries)}
-            </div>
-        </div>
-    )
-  }
+        )
+    }
 }
 
 
