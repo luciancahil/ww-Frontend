@@ -139,6 +139,9 @@ html{
   margin-top: 20px;
 }
 
+#bars h1{
+  text-align: center;
+}
 
 .bar{
   background-color: #d4cab8;
@@ -148,6 +151,7 @@ html{
   border-width: 2px;
   box-sizing: border-box;
   margin-bottom: 10px;
+  overflow: hidden;
 }
 
 .bar span{
@@ -157,10 +161,13 @@ html{
   box-sizing: border-box;
   height:100%;
   vertical-align: middle;
+  overflow: hidden;
 }
 
 .bar h2{
   text-align: center;
+  display: block;
+  overflow: hidden;
 }
 
 .bar input{

@@ -4,7 +4,7 @@ import Bar from './bar.component'
 class Bars extends React.Component {
     constructor(props){
         super()
-
+        
         
 
         this.state = {
@@ -25,6 +25,8 @@ class Bars extends React.Component {
         this.onChangeNeck = this.onChangeNeck.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.getWeeklyChange = this.getWeeklyChange.bind(this);
+
+        this.getEntries();
     }
 
     componentDidMount(){
@@ -156,7 +158,6 @@ class Bars extends React.Component {
     renderEntries = ({entrydate, height, abdomen, neck, fatPer, change, weeklyChange}) =>  <Bar thisDate = {entrydate} thisHeight = {height} thisAb = {abdomen} thisNeck = {neck} thisPer = {fatPer} thisChange = {change} thisWeek = {weeklyChange}/>
   
     render() {
-
         return (
             <div id = "bars">
                 <div className = "bar">
@@ -164,13 +165,13 @@ class Bars extends React.Component {
                         <h2>Date</h2>
                     </span>
                     <span>
-                        <h2>Height</h2>
+                        <h2>Height (in)</h2>
                     </span>
                     <span>
-                        <h2>Abdomen</h2>
+                        <h2>Abdomen (in)</h2>
                     </span>
                     <span>
-                        <h2>Neck</h2>
+                        <h2>Neck (in)</h2>
                     </span>
                     <span>
                         <h2>Body Fat %</h2>
@@ -196,10 +197,10 @@ class Bars extends React.Component {
                         <input id = "inputNeck" type = "number" onChange = {this.onChangeNeck}></input>
                     </span>
                     <span>
-                        <h2>N/A</h2>
+                        <h2>---</h2>
                     </span>
                     <span>
-                        <h2>N/A</h2>
+                        <h2>---</h2>
                     </span>
                     <span>
                         <h2><button onClick = {this.onSubmit}>Submit</button></h2>
@@ -208,6 +209,7 @@ class Bars extends React.Component {
                 <div className = "TestingEntries">
                     {this.state.entries.map(this.renderEntries)}
                 </div>
+                <h1>If you don't see entries, please refresh the page</h1>
             </div>
         )
     }
