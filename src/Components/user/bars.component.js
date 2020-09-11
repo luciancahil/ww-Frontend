@@ -11,7 +11,7 @@ class Bars extends React.Component {
             height : 0,
             abs : 0,
             neck : 0,
-            entries: null
+            entries: []
         }
 
         this.getEntries = this.getEntries.bind(this);
@@ -81,7 +81,9 @@ class Bars extends React.Component {
         }
 
 
-        console.log(array)
+        this.setState({
+            entries: array
+        })
     }
 
     getBodyFatPercent(entry){
@@ -149,7 +151,10 @@ class Bars extends React.Component {
         fetch(fetchURL).then(response => console.log(response)).catch(err => console.log(err))
     }
 
+
+renderEntries = ({entrydate, fatPer}) =>    <div key = {entrydate}>{fatPer}</div>
   render() {
+
     return (
         <div id = "bars">
             <div class = "bar">
@@ -197,6 +202,9 @@ class Bars extends React.Component {
                 <span>
                     <h2><button onClick = {this.onSubmit}>Submit</button></h2>
                 </span>
+            </div>
+            <div className = "TestingEntries">
+                {this.state.entries.map(this.renderEntries)}
             </div>
         </div>
     )
