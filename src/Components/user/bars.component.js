@@ -23,6 +23,7 @@ class Bars extends React.Component {
         this.onChangeAbs = this.onChangeAbs.bind(this);
         this.onChangeNeck = this.onChangeNeck.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+        this.getWeeklyChange = this.getWeeklyChange.bind(this);
     }
 
     componentDidMount(){
@@ -63,6 +64,22 @@ class Bars extends React.Component {
             this.getDailyChange(array[i], array[i + 1])
         }
 
+        //calculation of different weekly average
+
+        if(length <= 7){
+            for(let i = 0; i < length; i ++){
+                array[i].weeklyChange = 0;
+            }
+        }else{
+            for(let i = 0; i < 7; i++){
+                array[length - 1 - i].weeklyChange = 0;
+            }
+
+            for(let i = 0; i < length - 7; i++){
+                this.getWeeklyChange(array, i)
+            }
+        }
+
 
         console.log(array)
     }
@@ -87,6 +104,20 @@ class Bars extends React.Component {
         let perChange = (per1 - per0)/per0;
 
         entry1.change = perChange*100;
+    }
+
+    //calculates the differnce between today and yesterday's running average
+    getWeeklyChange(array, index){
+        let curWeek = 0;            //total of the last 7 days
+        let lastWeek = 0;           //total of the last 8 days, not including today.
+        
+        for(let i = 0; i < 7; i++){
+            curWeek += parseFloat(array[index + i].fatPer);
+        }
+
+        lastWeek = curWeek - parseFloat(array[index].fatPer) + parseFloat(array[index + 7].fatPer);
+
+        array[index].weeklyChange = ((lastWeek - curWeek)/lastWeek * 100).toFixed(2);
     }
 
 
