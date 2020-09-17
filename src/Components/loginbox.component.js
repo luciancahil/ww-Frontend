@@ -77,7 +77,7 @@ class LoginBox extends React.Component {
                         </div>
                         <div className = "LoginButtonOuter">
                             <div className = "LoginButtonInner">
-                                <button>Sign up</button>
+                                <a href = "/signup"><button>Sign up</button></a>
                             </div>
                         </div>
                     </div>
