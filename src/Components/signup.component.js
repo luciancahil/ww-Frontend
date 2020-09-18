@@ -23,7 +23,7 @@ class SignUp extends React.Component {
     return(
         <div class = "BoxBoxOuter">
             <div class = "Box">
-                <div class = "BoxTop"><h2>Login</h2></div>
+                <div class = "BoxTop"><h2>Signup</h2></div>
 
                 <div class = "BoxBottom">
                     <div class = "BoxForms">
@@ -32,13 +32,9 @@ class SignUp extends React.Component {
                         <LoginError type = {this.state.signup_status}/>
                     </div>
 
-                    <div className = "LoginButtonOuter">
-                        <div className = "LoginButtonInner">
-                            <button onClick = {this.onSubmit}>Sign in</button>
-                        </div>
-                    </div>
-                    <div className = "LoginButtonOuter">
-                        <div className = "LoginButtonInner">
+                    
+                    <div className = "SignupButtonOuter">
+                        <div className = "SignupButtonInner">
                             <a href = "/signup"><button>Sign up</button></a>
                         </div>
                     </div>

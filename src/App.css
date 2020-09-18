@@ -135,6 +135,16 @@ html{
   margin:auto;
 }
 
+.Box .SignupButtonOuter{
+  width:100%;
+  display:inline-block;
+}
+
+.Box .SignupButtonInner button{
+  width:100%;
+  margin:auto;
+}
+
 #bars{
   margin-top: 20px;
 }
