@@ -59,12 +59,12 @@ class LoginBox extends React.Component {
 
     render() {
         return(
-            <div id = "LoginBoxOuter">
-                <div id = "Loginbox">
-                    <div id = "LoginTop"><h2>Login</h2></div>
+            <div class = "BoxBoxOuter">
+                <div class = "Box">
+                    <div class = "BoxTop"><h2>Login</h2></div>
 
-                    <div id = "LoginBottom">
-                        <div id = "LoginForms">
+                    <div class = "BoxBottom">
+                        <div class = "BoxForms">
                             <plaintext>Username:</plaintext><input type = "text" value = {this.state.login_username} onChange = {this.onChangeUsername}></input><br></br>
                             <plaintext>Password:</plaintext><input type = "password" value = {this.state.login_password} onChange = {this.onChangePassword}></input><br></br>
                             <LoginError type = {this.state.login_status}/>
