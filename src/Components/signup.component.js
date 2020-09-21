@@ -5,16 +5,18 @@ import LoginError from './loginerror.component'
 class SignUp extends React.Component {
   constructor(props){
     super(props);
+    //window.location.href = "/login";
 
     this.onSubmit = this.onSubmit.bind(this);
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangePasswordOne = this.onChangePasswordOne.bind(this);
     this.onChangePasswordTwo = this.onChangePasswordTwo.bind(this);
+    this.enter = this.enter.bind(this);
     this.state = {
         signup_username: "" ,
         signup_password_one: "",
         signup_password_two: "",
-        signup_status: "Hello"
+        signup_status: ""
     };
     if(sessionStorage.getItem(this.props.randomSession + "username") !== null){
         props.quickStart(sessionStorage.getItem(this.props.randomSession + "username"))
@@ -40,6 +42,7 @@ class SignUp extends React.Component {
   }
 
   onSubmit(e){
+      //checks to see if the username password combo is potentially valid
     let pOne = this.state.signup_password_one;
     let pTwo = this.state.signup_password_two;
     let user = this.state.signup_username;
@@ -69,7 +72,26 @@ class SignUp extends React.Component {
     this.setState({
         signup_status : "hi"
     })
-    console.log("entered " + user + " and " + pOne);
+    
+    this.enter(user, pOne);
+  }
+
+  //submit the password into the backend
+  enter(userN, passW){
+      let fetchURL = "http://weight.wwtbe.nl/signup?username=" + userN + "&password=" + passW;
+
+      fetch(fetchURL)
+            .then((response) => response.text())
+            .then((text) => {
+                this.setState({
+                    signup_status : text
+                })
+
+                console.log(text);
+                if(this.state.login_status == "inserted"){
+                    alert("Congragulations! You have signed in!")
+                }
+            })
   }
 
   render() {
