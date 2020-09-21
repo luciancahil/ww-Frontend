@@ -40,17 +40,39 @@ class SignUp extends React.Component {
   }
 
   onSubmit(e){
-    console.log("submit");
+    let pOne = this.state.signup_password_one;
+    let pTwo = this.state.signup_password_two;
+    let user = this.state.signup_username;
+
+    if(user.length < 5){
+        console.log("short user");
+        return;
+    }
+    
+    if(pOne == pTwo){
+       // console.log("matching");
+    }else{
+        console.log("unmatched");
+        return;
+    }
+
+    if(pOne.length < 8){
+        console.log("short pass");
+        return;
+    }
+
+    
+    console.log("entered " + user + " and " + pOne);
   }
 
   render() {
     return(
-        <div class = "BoxBoxOuter">
-            <div class = "Box">
+        <div className = "BoxBoxOuter">
+            <div className = "Box">
                 <div className = "BoxTop"><h2>Signup</h2></div>
 
-                <div class = "BoxBottom">
-                    <div class = "BoxForms">
+                <div className = "BoxBottom">
+                    <div className = "BoxForms">
                         <plaintext>Username:</plaintext><input type = "text" value = {this.state.signup_username} onChange = {this.onChangeUsername}></input><br></br>
                         <plaintext>Password:</plaintext><input type = "password" value = {this.state.signup_password_one} onChange = {this.onChangePasswordOne}></input><br></br>
                         <plaintext>Retype Password:</plaintext><input type = "password" value = {this.state.signup_password_two} onChange = {this.onChangePasswordTwo}></input><br></br>
