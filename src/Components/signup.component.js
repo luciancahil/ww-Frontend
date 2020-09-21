@@ -88,8 +88,8 @@ class SignUp extends React.Component {
                 })
 
                 console.log(text);
-                if(this.state.login_status == "inserted"){
-                    alert("Congragulations! You have signed in!")
+                if(this.state.signup_status == "inserted"){
+                    window.location.href = "/signedup";
                 }
             })
   }
