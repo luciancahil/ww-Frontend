@@ -102,7 +102,7 @@ html{
   
 }
 
-.Box .BoxError{
+.Box #BoxError{
   font-size: 100%;
   color:red;
   margin: 0;

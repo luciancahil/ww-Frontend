@@ -45,7 +45,10 @@ class SignUp extends React.Component {
     let user = this.state.signup_username;
 
     if(user.length < 5){
-        console.log("short user");
+        //console.log("short user");
+        this.setState({
+            signup_status : "short user"
+        })
         return;
     }
     

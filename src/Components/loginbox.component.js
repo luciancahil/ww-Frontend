@@ -12,7 +12,7 @@ class LoginBox extends React.Component {
         this.state = {
             login_username: "" ,
             login_password: "",
-            login_status: "Hello"
+            signup_status: "Hello"
         };
         if(sessionStorage.getItem(this.props.randomSession + "username") !== null){
             props.quickStart(sessionStorage.getItem(this.props.randomSession + "username"))
@@ -59,12 +59,12 @@ class LoginBox extends React.Component {
 
     render() {
         return(
-            <div class = "BoxBoxOuter">
-                <div class = "Box">
-                    <div class = "BoxTop"><h2>Login</h2></div>
+            <div className = "BoxBoxOuter">
+                <div className = "Box">
+                    <div className = "BoxTop"><h2>Login</h2></div>
 
-                    <div class = "BoxBottom">
-                        <div class = "BoxForms">
+                    <div className = "BoxBottom">
+                        <div className = "BoxForms">
                             <plaintext>Username:</plaintext><input type = "text" value = {this.state.login_username} onChange = {this.onChangeUsername}></input><br></br>
                             <plaintext>Password:</plaintext><input type = "password" value = {this.state.login_password} onChange = {this.onChangePassword}></input><br></br>
                             <LoginError type = {this.state.login_status}/>

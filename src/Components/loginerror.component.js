@@ -12,6 +12,7 @@ class LoginError extends React.Component {
     componentDidUpdate(){
         const wrongPass = "Error! Your Password is Incorrect";
         const notRegistered = "Error! Your Username is not registered.";
+        const shortUser = "Error! Your username must be 5 characters long";
 
         if(this.props.type == "Denied"){
             if(this.state.error_message != wrongPass){
@@ -24,6 +25,12 @@ class LoginError extends React.Component {
                 this.setState({error_message: notRegistered});
             }
         }
+
+        if(this.props.type == "short user"){
+            if(this.state.error_message != shortUser){
+                this.setState({error_message: shortUser});
+            }
+        }
     }
 
     render() {
@@ -32,7 +39,7 @@ class LoginError extends React.Component {
         }
 
         return (
-            <plaintext id = "LoginError">{this.state.error_message}</plaintext>
+            <plaintext id = "BoxError">{this.state.error_message}</plaintext>
         )
     }
 }
