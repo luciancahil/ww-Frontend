@@ -66,7 +66,9 @@ class SignUp extends React.Component {
         return;
     }
 
-    
+    this.setState({
+        signup_status : "hi"
+    })
     console.log("entered " + user + " and " + pOne);
   }
 

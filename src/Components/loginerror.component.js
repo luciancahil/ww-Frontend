@@ -15,6 +15,7 @@ class LoginError extends React.Component {
         const shortUser = "Error! Your username must be 5 characters long.";    //username too short    
         const unmatchedPasswords = "Error! Your passwords do not match.";
         const shortPassword = "Error! Your password must be 8 characters long";
+        const noError = "none";
 
         if(this.props.type == "Denied"){
             if(this.state.error_message != wrongPass){
@@ -35,6 +36,10 @@ class LoginError extends React.Component {
         }else if(this.props.type == "shortPass"){
             if(this.state.error_message != shortPassword){
                 this.setState({error_message: shortPassword});
+            }
+        }else{
+            if(this.state.error_message != noError){
+                this.setState({error_message: noError});
             }
         }
     }
