@@ -209,7 +209,7 @@ class Bars extends React.Component {
                 <div className = "TestingEntries">
                     {this.state.entries.map(this.renderEntries)}
                 </div>
-                <h1>If you don't see entries, please refresh the page</h1>
+                <h1>If you don't see your entries, please refresh the page</h1>
             </div>
         )
     }

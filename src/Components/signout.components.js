@@ -7,6 +7,7 @@ class SignOut extends React.Component {
     }
 
     render() {
+        sessionStorage.clear();
         return <h2>You are now loged out</h2>;
     }
 }

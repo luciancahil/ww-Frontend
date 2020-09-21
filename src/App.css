@@ -60,78 +60,88 @@ html{
   float: right;
 }
 
-#Loginbox{
+.Box{
   width: 60%;
   margin: 0 auto;
   margin-top:30px;
 }
 
-#Loginbox h2{
+.Box h2{
   padding:0;
   width: 16%;
   color:white;
   margin: 0 auto;
 }
 
-#Loginbox #LoginTop{
+.Box .BoxTop{
   background-color:#282828;
 }
 
-#Loginbox #LoginBottom{
+.Box .BoxBottom{
   padding:10px;
   background-color: #d4cab8;
 }
 
-#Loginbox #LoginForms{
+.Box .BoxForms{
   margin-bottom: 20px;
 }
 
-#Loginbox plaintext{
+.Box plaintext{
   display: inline-block;
   margin: 10px;
 }
 
-#Loginbox input{
+.Box input{
   width:99%;
 }
 
-#Loginbox button{
+.Box button{
   border: solid;
   background-color: white;
   border-radius: 10px;
   
 }
 
-#Loginbox #LoginError{
+.Box #BoxError{
   font-size: 100%;
   color:red;
   margin: 0;
 }
 
-#Loginbox button:focus{
+.Box button:focus{
   outline: none;
   box-shadow: none;
 }
 
-#Loginbox button:active{
+.Box button:active{
   background:red;
 }
 
-#Loginbox button, #Loginbox plaintext{
+.Box button, .Box plaintext{
   font-size: 200%;
 }
 
-#Loginbox .inputWrapper{
+.Box .inputWrapper{
   margin: auto;
 }
 
-#Loginbox .LoginButtonOuter{
+.Box .LoginButtonOuter{
   width:50%;
   display:inline-block;
 }
 
-#Loginbox .LoginButtonInner{
+.Box .LoginButtonInner{
   width:45%;
+  margin:auto;
+}
+
+.Box .SignupButtonOuter{
+  width:100%;
+  display:inline-block;
+}
+
+.Box .SignupButtonInner button{
+  width:100%;
   margin:auto;
 }
 

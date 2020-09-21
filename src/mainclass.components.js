@@ -8,6 +8,7 @@ import Info from "./Components/info.component"
 import Navbar from "./Components//navbar.component"
 import HomePage from "./Components/homepage.component"
 import SignOut from "./Components/signout.components"
+import SignedUp from "./Components/signedup.component"
 
 class MainClass extends React.Component{
     constructor(props){
@@ -64,7 +65,7 @@ class MainClass extends React.Component{
             <Route path="/signOut" render={(props) => <SignOut {...props} clearSession = {this.clearSession}/>} />
             <Route path="/signup" component={Signup} />
             <Route path="/users" component={UserInfo} />
-            <Route path="/info" component={Info} />
+            <Route path="/signedup" component={SignedUp} />
 
             </Router>
         );
