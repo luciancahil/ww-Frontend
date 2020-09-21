@@ -6,7 +6,7 @@ class SignUp extends React.Component {
   constructor(props){
     super(props);
 
-    //this.onSubmit = this.onSubmit.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
     this.onChangeUsername = this.onChangeUsername.bind(this);
     this.onChangePasswordOne = this.onChangePasswordOne.bind(this);
     this.onChangePasswordTwo = this.onChangePasswordTwo.bind(this);
@@ -20,7 +20,7 @@ class SignUp extends React.Component {
         props.quickStart(sessionStorage.getItem(this.props.randomSession + "username"))
     }
   }
-
+  
   onChangeUsername(e){
       this.setState({
         signup_username : e.target.value
@@ -39,11 +39,15 @@ class SignUp extends React.Component {
     })
   }
 
+  onSubmit(e){
+    console.log("submit");
+  }
+
   render() {
     return(
         <div class = "BoxBoxOuter">
             <div class = "Box">
-                <div class = "BoxTop"><h2>Signup</h2></div>
+                <div className = "BoxTop"><h2>Signup</h2></div>
 
                 <div class = "BoxBottom">
                     <div class = "BoxForms">
@@ -56,7 +60,7 @@ class SignUp extends React.Component {
                     
                     <div className = "SignupButtonOuter">
                         <div className = "SignupButtonInner">
-                            <a href = "/signup"><button>Sign up</button></a>
+                            <button onClick = {this.onSubmit}>Sign up</button>
                         </div>
                     </div>
                 </div>
