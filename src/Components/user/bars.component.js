@@ -34,7 +34,7 @@ class Bars extends React.Component {
     }
 
     getEntries(){
-        var getURL = "https://weight.wwtbe.nl/retrieve?username=" + sessionStorage.getItem(this.state.randomSession + "username")
+        var getURL = "https://diff.wwtbe.nl/retrieve?username=" + sessionStorage.getItem(this.state.randomSession + "username")
         fetch(getURL)
             .then(response => response.json())
             .then(({data}) => {
@@ -148,7 +148,7 @@ class Bars extends React.Component {
     }
 
     onSubmit(e){
-        const fetchURL = "https://weight.wwtbe.nl/addEntry?username=" + sessionStorage.getItem(this.state.randomSession + "username") 
+        const fetchURL = "https://diff.wwtbe.nl/addEntry?username=" + sessionStorage.getItem(this.state.randomSession + "username") 
         + "&entrydate='" + this.state.date + "'&height=" + this.state.height + "&abdomen=" + this.state.abs + "&neck=" + this.state.neck
 
         fetch(fetchURL).then(response => console.log(response)).then(this.getEntries).catch(err => console.log(err))

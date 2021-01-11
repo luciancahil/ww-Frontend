@@ -78,7 +78,7 @@ class SignUp extends React.Component {
 
   //submit the password into the backend
   enter(userN, passW){
-      let fetchURL = "http://weight.wwtbe.nl/signup?username=" + userN + "&password=" + passW;
+      let fetchURL = "https://diff.wwtbe.nl/signup?username=" + userN + "&password=" + passW;
 
       fetch(fetchURL)
             .then((response) => response.text())
