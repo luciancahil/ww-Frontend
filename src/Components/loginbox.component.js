@@ -45,7 +45,7 @@ class LoginBox extends React.Component {
         fetch(fetchURL)
             .then((response) => response.text())
             .then((text) => {
-               // console.log(text)
+                console.log(fetchURL)
                 this.setState({
                     login_status: text
                 })
